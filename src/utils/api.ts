@@ -1,7 +1,7 @@
-import axios from "axios";
+import axios, { AxiosInstance } from "axios";
 
 class WebService {
-  private client: any;
+  private client: AxiosInstance;
   private params: any;
 
   constructor() {

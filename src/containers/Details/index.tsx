@@ -1,11 +1,9 @@
 import React from 'react';
 
+import MovieSummary from '../../components/MovieSummary';
+
 export const Details = (): React.ReactElement =>
-  <div>
-    <p>
-      Details
-    </p>
-  </div>
+  <MovieSummary />
 
 
 export default Details;
