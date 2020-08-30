@@ -4,14 +4,14 @@ import ListMovies from '../ListMovies';
 import { ListContainer, ListTitle } from "./style";
 import { IListSuggestionsProps } from './models';
 
-export const ListSuggestions = ({ suggestions }: IListSuggestionsProps): React.ReactElement =>
+export const ListSuggestions = ({ suggestions, movies }: IListSuggestionsProps): React.ReactElement =>
   <ListContainer>
     {suggestions.map((suggestion) =>
       <>
         <ListTitle>
           {suggestion}
         </ListTitle>
-        <ListMovies movies={[]} />
+        <ListMovies movies={movies} />
       </>
     )}
   </ListContainer>

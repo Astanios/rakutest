@@ -1,15 +1,16 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
+import { TMD_IMG_URL } from '../../common/constants';
 import { IMovieThumbnailProps } from './models';
 import { MovieThumbnailContainer, MovieThumbnailImage, MovieThumbnailTitle } from './style'
 
-export const MovieThumbnail = (): React.ReactElement =>
+export const MovieThumbnail = ({ movie }: IMovieThumbnailProps): React.ReactElement =>
   <Link to={"/details"}>
     <MovieThumbnailContainer>
-      <MovieThumbnailImage src="https://image.tmdb.org/t/p/w400//TnOeov4w0sTtV2gqICqIxVi74V.jpg" alt="movie cover" />
+      <MovieThumbnailImage src={`${TMD_IMG_URL}${movie.poster_path}`} alt="movie cover" />
       <MovieThumbnailTitle>
-        Project Power
+        {movie.title}
       </MovieThumbnailTitle>
     </MovieThumbnailContainer>
   </Link>

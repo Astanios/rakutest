@@ -11,14 +11,16 @@ export const MovieSummaryAttr = styled.div`
   display: flex;
   flex-direction: row;
   jutify-content: flex-start;
+  margin: 10px 2px;
 `;
 
 export const MovieSummaryInfoLabel = styled.label`
   font-size: 18px;
   font-weight: bold;
-  width: 300px
+  width: 100px
 `;
 
 export const MovieSummaryElem = styled.label`
   font-size: 18px;
+  width: 90%;
 `;

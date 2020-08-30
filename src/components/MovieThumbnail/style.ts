@@ -19,7 +19,7 @@ export const MovieThumbnailImage = styled.img`
 `;
 
 
-export const MovieThumbnailTitle = styled.h3`
-  font-size; 18px;
+export const MovieThumbnailTitle = styled.p`
+  font-size; 14px;
   font-weight: bold;
 `;
