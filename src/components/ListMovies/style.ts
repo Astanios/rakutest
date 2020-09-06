@@ -8,10 +8,4 @@ export const ListWrapper = styled.ul`
   overflow-x: scroll;
   margin: 0;
   padding: 0;
-  &::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 15px;
-    height: 15px;
-    border:1px solid black;
-  }
 `;

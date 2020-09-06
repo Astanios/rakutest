@@ -12,7 +12,6 @@ import { discoverTitle } from '../../common/constants';
 export function* getMovies() {
   try {
     let response = yield call(WebService.getMovies);
-    console.log('getMovies: ', response, !response)
     if (!response || !Array.isArray(response)) {
       throw new Error(response.problem);
     }

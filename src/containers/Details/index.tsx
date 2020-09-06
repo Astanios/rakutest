@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import MovieSummary from '../../components/MovieSummary';
 import { movieSelectedSelector } from "../../store/movie/selectors";
 import { startGetMovieById } from "../../store/movie/actions";
-
+import { IState } from '../../store/models'
 import IDetailsProps from './models';
 
 export const Details = ({
@@ -12,13 +12,10 @@ export const Details = ({
   movie,
   match: {
     params: { selectedId }
-  },
-  history: { goBack }
+  }
 }: IDetailsProps): React.ReactElement => {
   useEffect(() => {
     startGetMovieById(selectedId);
-    console.log('details', selectedId);
-
   }, [startGetMovieById, selectedId]);
 
   if (!movie || !movie.title) {
@@ -29,7 +26,7 @@ export const Details = ({
   );
 }
 
-const mapStateToProps = (state: any): any => ({
+const mapStateToProps = (state: IState) => ({
   movie: movieSelectedSelector(state)
 });
 

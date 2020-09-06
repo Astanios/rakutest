@@ -1,4 +1,5 @@
 import * as ActionTypes from "../actionTypes";
+import { MoviesActions } from './models';
 
 const initialState = {
   isLoading: false,
@@ -8,9 +9,7 @@ const initialState = {
   movieSelected: null
 };
 
-export default (state = initialState, action: any) => {
-  console.log('default reducer', state, action);
-
+export default (state = initialState, action: MoviesActions) => {
   switch (action.type) {
     case ActionTypes.START_SEARCH_MOVIE:
     case ActionTypes.START_GET_MOVIE_BY_ID:

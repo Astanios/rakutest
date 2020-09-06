@@ -22,4 +22,5 @@ export interface MovieThumb {
   poster_path: string;
   title: string;
   id: number;
+  release_date: string;
 }

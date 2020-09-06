@@ -12,3 +12,5 @@ export const ListTitle = styled.h2`
   padding: 10px 0;
   color: #fff;
 `;
+
+export const ListWrapper = styled.div``;

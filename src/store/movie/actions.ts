@@ -1,46 +1,48 @@
+import { AxiosResponse } from 'axios';
 import * as ActionTypes from "../actionTypes";
+import { Movie, MovieThumb } from '../../common/models/movie';
 
-export const startSearchMovie = (payload: any) => ({
+export const startSearchMovie = (payload: string) => ({
   type: ActionTypes.START_SEARCH_MOVIE,
   payload
 });
 
-export const successSearchMovie = (payload: any) => ({
+export const successSearchMovie = (payload: MovieThumb[]) => ({
   type: ActionTypes.SUCCESS_SEARCH_MOVIE,
   payload
 });
 
-export const failSearchMovie = (payload: any) => ({
+export const failSearchMovie = (payload: Error) => ({
   type: ActionTypes.FAIL_SEARCH_MOVIE,
   payload
 });
 
-export const startGetMovies = (payload: any) => ({
+export const startGetMovies = (payload: undefined) => ({
   type: ActionTypes.START_GET_MOVIES,
   payload
 });
 
-export const successGetMovies = (payload: any) => ({
+export const successGetMovies = (payload: AxiosResponse) => ({
   type: ActionTypes.SUCCESS_GET_MOVIES,
   payload
 });
 
-export const failGetMovies = (payload: any) => ({
+export const failGetMovies = (payload: Error) => ({
   type: ActionTypes.FAIL_GET_MOVIES,
   payload
 });
 
-export const startGetMovieById = (payload: any) => ({
+export const startGetMovieById = (payload: string) => ({
   type: ActionTypes.START_GET_MOVIE_BY_ID,
   payload
 });
 
-export const successGetMovieById = (payload: any) => ({
+export const successGetMovieById = (payload: Movie) => ({
   type: ActionTypes.SUCCESS_GET_MOVIE_BY_ID,
   payload
 });
 
-export const failGetMovieById = (payload: any) => ({
+export const failGetMovieById = (payload: Error) => ({
   type: ActionTypes.FAIL_GET_MOVIE_BY_ID,
   payload
 });

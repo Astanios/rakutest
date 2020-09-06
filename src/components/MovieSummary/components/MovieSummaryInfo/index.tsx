@@ -4,7 +4,7 @@ import { MovieSummaryInfoContainer, MovieSummaryAttr, MovieSummaryInfoLabel, Mov
 import { IMovieSummaryInfoProps } from './models';
 
 const MovieSummaryInfo = ({ movieInfo }: IMovieSummaryInfoProps): React.ReactElement => {
-  const { original_title, genres, vote_average, overview } = movieInfo;
+  const { original_title, genres, vote_average, overview, release_date } = movieInfo;
   return (
     <MovieSummaryInfoContainer>
       <MovieSummaryAttr>
@@ -29,6 +29,14 @@ const MovieSummaryInfo = ({ movieInfo }: IMovieSummaryInfoProps): React.ReactEle
         </MovieSummaryInfoLabel>
         <MovieSummaryElem>
           {vote_average}
+        </MovieSummaryElem>
+      </MovieSummaryAttr>
+      <MovieSummaryAttr>
+        <MovieSummaryInfoLabel>
+          Release date:
+        </MovieSummaryInfoLabel>
+        <MovieSummaryElem>
+          {release_date}
         </MovieSummaryElem>
       </MovieSummaryAttr>
       <MovieSummaryAttr>

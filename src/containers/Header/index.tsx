@@ -1,46 +1,46 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
 
 import { movieSelectedSelector } from "../../store/movie/selectors";
 import { MenuLink, MenuTitle, Nav, NavCenter, NavHeader, NavLeft, NavRight } from './style';
+import { IState } from '../../store/models'
 import { IHeaderProps } from './models';
-import SearchBox from '../../components/SearchBox';
+import SearchBox from '../SearchBox';
+import GoBackIcon from '../../components/GoBackIcon';
 
 const Header = ({ movie }: IHeaderProps): React.ReactElement =>
   <Nav>
     <NavHeader>
-      {movie?.original_title &&
-        <NavLeft>
-          <MenuLink href="/">
-            <img src='https://www.iconninja.com/files/173/559/776/left-direction-arrows-arrow-navigation-back-icon.svg' height="26" />
-          </MenuLink>
-        </NavLeft>
-      }
-      <NavCenter>
-        <MenuTitle>
-          {movie?.original_title ? movie.original_title : 'Rakuten TV'}
+      {!!movie ? (
+        <>
+          <NavLeft>
+            <MenuLink href="/">
+              <GoBackIcon />
+            </MenuLink>
+          </NavLeft>
+          <NavCenter>
+            <MenuTitle>
+              {movie.original_title}
+            </MenuTitle>
+          </NavCenter>
+        </>
+      ) : (
+          <NavCenter>
+            <MenuTitle>
+              Rakuten TV
         </MenuTitle>
-      </NavCenter>
+          </NavCenter>
+        )}
       <NavRight>
         <SearchBox />
       </NavRight>
     </NavHeader>
   </Nav >
 
-const mapStateToProps = (state: any): any => ({
+const mapStateToProps = (state: IState): any => ({
   movie: movieSelectedSelector(state)
 });
 
-const mapDispatchToProps = {};
-
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mapStateToProps
 )(Header);
-/*
-
-        <NavRight>
-      <Input type="text" placeholder="Search" />
-    </NavRight>
-        */

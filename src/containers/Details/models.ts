@@ -1,14 +1,11 @@
 import { Movie } from '../../common/models/movie';
 
 export default interface IDetailsProps {
-  startGetMovieById: (selectedId: string) => void,
-  movie: Movie,
+  startGetMovieById: (selectedId: string) => void;
+  movie: Movie;
   match: {
     params: {
       selectedId: string
     }
-  },
-  history: {
-    goBack: () => void,
-  }
+  };
 }
