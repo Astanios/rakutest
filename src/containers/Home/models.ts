@@ -1,10 +1,6 @@
-import { Movie } from '../../common/models/movie';
-
-interface MovieThumbanil {
-
-}
+import { MovieThumb } from '../../common/models/movie';
 
 export interface IHomeProps {
-  movies: Movie[],
+  movies: MovieThumb[],
   startGetMovies: () => void;
 }

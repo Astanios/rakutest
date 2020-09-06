@@ -2,10 +2,11 @@ import styled from 'styled-components';
 
 export const StyledSpinner = styled.svg`
   animation: rotate 2s linear infinite;
-  margin: -25px 0 0 -25px;
-  width: 50px;
+  width: 100%;
   height: 50px;
-  
+  margin: 25% auto;
+  top: 30vh;
+
   & .path {
     stroke: #5652BF;
     stroke-linecap: round;

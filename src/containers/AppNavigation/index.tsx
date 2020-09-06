@@ -11,6 +11,7 @@ function AppNavigation(): React.ReactElement {
   return (
     <Router>
       <Header />
+      <Spinner />
       <Switch>
         <Route path="/details/:selectedId" component={Details} />
         <Route exact path="/" component={Home} />

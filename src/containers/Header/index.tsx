@@ -3,8 +3,9 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
 import { movieSelectedSelector } from "../../store/movie/selectors";
-import { MenuLink, MenuTitle, Nav, NavCenter, NavHeader, NavLeft } from './style';
+import { MenuLink, MenuTitle, Nav, NavCenter, NavHeader, NavLeft, NavRight } from './style';
 import { IHeaderProps } from './models';
+import SearchBox from '../../components/SearchBox';
 
 const Header = ({ movie }: IHeaderProps): React.ReactElement =>
   <Nav>
@@ -21,6 +22,9 @@ const Header = ({ movie }: IHeaderProps): React.ReactElement =>
           {movie?.original_title ? movie.original_title : 'Rakuten TV'}
         </MenuTitle>
       </NavCenter>
+      <NavRight>
+        <SearchBox />
+      </NavRight>
     </NavHeader>
   </Nav >
 

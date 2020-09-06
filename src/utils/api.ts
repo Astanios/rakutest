@@ -1,5 +1,5 @@
 import axios, { AxiosInstance } from 'axios';
-import { REACT_APP_MOVIE_DB_KEY } from '../common/constants';
+import { REACT_APP_MOVIE_DB_KEY, discoverList } from '../common/constants';
 
 class WebService {
   private client: AxiosInstance;
@@ -13,7 +13,11 @@ class WebService {
   }
 
   getMovies = () => {
-    return this.client.get('/discover/movie?sort_by=popularity.desc', { params: this.params });
+    return axios.all(
+      discoverList.map((link) =>
+        this.client.get(link, { params: this.params })
+      )
+    );
   }
 
   searchMovie = (query: any) => {

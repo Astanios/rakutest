@@ -4,8 +4,10 @@ export const MovieSummaryContainer = styled.div`
   display: flex;
   flex-direction: row;
   height: 100%
-  justify-content: flex-start;
+  justify-content: center;
   padding: 10px;
+  width: 800px;
+  margin: auto auto;
 `;
 
 export const MovieSummaryImage = styled.img`

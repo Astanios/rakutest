@@ -17,3 +17,9 @@ export interface Movie {
   overview: string;
   release_date: string;
 }
+
+export interface MovieThumb {
+  poster_path: string;
+  title: string;
+  id: number;
+}

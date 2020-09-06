@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const MovieSummaryInfoContainer = styled.div`
   height: 100%;
   width: 100%;
+  color: #fff;
 `;
 
 export const MovieSummaryAttr = styled.div`

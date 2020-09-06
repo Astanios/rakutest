@@ -8,28 +8,25 @@ import {
   failSearchMovie
 } from "./actions";
 import WebService from "../../utils/api";
-
+import { discoverTitle } from '../../common/constants';
 export function* getMovies() {
   try {
-    const response = yield call(WebService.getMovies);
-
-    if (!response || !response.data) {
+    let response = yield call(WebService.getMovies);
+    console.log('getMovies: ', response, !response)
+    if (!response || !Array.isArray(response)) {
       throw new Error(response.problem);
     }
-
-    yield put(successGetMovies(response.data.results));
+    response = response.map((list, i) => ({ title: discoverTitle[i], list: list.data.results }));
+    yield put(successGetMovies(response));
   } catch (e) {
     yield put(failGetMovies(e));
   }
 }
 
 export function* getMovieById({ payload }: any) {
-  console.log('sagas b4 try');
-
   try {
     const movieId = payload;
     const response = yield call(WebService.getMovieById, movieId);
-    console.log('sagas getmovies', response);
 
     if (!response || !response.data) {
       throw new Error(response.problem);
@@ -37,8 +34,6 @@ export function* getMovieById({ payload }: any) {
 
     yield put(successGetMovieById(response.data));
   } catch (e) {
-    console.log('sagas failed get movies', e);
-
     yield put(failGetMovieById(e));
   }
 }

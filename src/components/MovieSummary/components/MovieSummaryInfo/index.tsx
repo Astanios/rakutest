@@ -4,7 +4,7 @@ import { MovieSummaryInfoContainer, MovieSummaryAttr, MovieSummaryInfoLabel, Mov
 import { IMovieSummaryInfoProps } from './models';
 
 const MovieSummaryInfo = ({ movieInfo }: IMovieSummaryInfoProps): React.ReactElement => {
-  const { original_title, genres } = movieInfo;
+  const { original_title, genres, vote_average, overview } = movieInfo;
   return (
     <MovieSummaryInfoContainer>
       <MovieSummaryAttr>
@@ -28,7 +28,7 @@ const MovieSummaryInfo = ({ movieInfo }: IMovieSummaryInfoProps): React.ReactEle
           Rating:
         </MovieSummaryInfoLabel>
         <MovieSummaryElem>
-          6.7
+          {vote_average}
         </MovieSummaryElem>
       </MovieSummaryAttr>
       <MovieSummaryAttr>
@@ -36,7 +36,7 @@ const MovieSummaryInfo = ({ movieInfo }: IMovieSummaryInfoProps): React.ReactEle
           Overview:
         </MovieSummaryInfoLabel>
         <MovieSummaryElem>
-          An ex-soldier, a teen and a cop collide in New Orleans as they hunt for the source behind a dangerous new pill that grants users temporary superpowers.
+          {overview}
         </MovieSummaryElem>
       </MovieSummaryAttr>
     </MovieSummaryInfoContainer>

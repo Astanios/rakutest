@@ -1,6 +1,8 @@
-import { Movie } from '../../common/models/movie'
+import { MovieThumb } from '../../common/models/movie'
 
 export interface IListSuggestionsProps {
-  suggestions: string[];
-  movies: Movie[];
+  moviesLists: {
+    title: string;
+    list: MovieThumb[];
+  }[]
 }
