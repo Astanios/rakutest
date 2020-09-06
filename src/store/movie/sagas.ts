@@ -24,9 +24,12 @@ export function* getMovies() {
 }
 
 export function* getMovieById({ payload }: any) {
+  console.log('sagas b4 try');
+
   try {
     const movieId = payload;
     const response = yield call(WebService.getMovieById, movieId);
+    console.log('sagas getmovies', response);
 
     if (!response || !response.data) {
       throw new Error(response.problem);
@@ -34,6 +37,8 @@ export function* getMovieById({ payload }: any) {
 
     yield put(successGetMovieById(response.data));
   } catch (e) {
+    console.log('sagas failed get movies', e);
+
     yield put(failGetMovieById(e));
   }
 }

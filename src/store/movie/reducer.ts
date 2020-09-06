@@ -9,6 +9,8 @@ const initialState = {
 };
 
 export default (state = initialState, action: any) => {
+  console.log('default reducer', state, action);
+
   switch (action.type) {
     case ActionTypes.START_SEARCH_MOVIE:
     case ActionTypes.START_GET_MOVIE_BY_ID:

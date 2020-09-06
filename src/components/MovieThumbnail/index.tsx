@@ -6,7 +6,7 @@ import { IMovieThumbnailProps } from './models';
 import { MovieThumbnailContainer, MovieThumbnailImage, MovieThumbnailTitle } from './style'
 
 export const MovieThumbnail = ({ movie }: IMovieThumbnailProps): React.ReactElement =>
-  <Link to={"/details"}>
+  <Link to={`/details/${movie.id}`}>
     <MovieThumbnailContainer>
       <MovieThumbnailImage src={`${TMD_IMG_URL}${movie.poster_path}`} alt="movie cover" />
       <MovieThumbnailTitle>
