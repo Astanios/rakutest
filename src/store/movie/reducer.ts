@@ -11,7 +11,7 @@ const initialState = {
 
 export default (state = initialState, action: MoviesActions) => {
   switch (action.type) {
-    case ActionTypes.START_SEARCH_MOVIE:
+    case ActionTypes.START_SEARCH_MOVIES:
     case ActionTypes.START_GET_MOVIE_BY_ID:
     case ActionTypes.START_GET_MOVIES:
       return {
@@ -19,7 +19,7 @@ export default (state = initialState, action: MoviesActions) => {
         searchMoviesHistory: [],
         isLoading: true
       };
-    case ActionTypes.FAIL_SEARCH_MOVIE:
+    case ActionTypes.FAIL_SEARCH_MOVIES:
     case ActionTypes.FAIL_GET_MOVIE_BY_ID:
     case ActionTypes.FAIL_GET_MOVIES:
       return {
@@ -41,7 +41,7 @@ export default (state = initialState, action: MoviesActions) => {
         error: null,
         isLoading: false
       };
-    case ActionTypes.SUCCESS_SEARCH_MOVIE:
+    case ActionTypes.SUCCESS_SEARCH_MOVIES:
       return {
         ...state,
         searchMoviesHistory: action.payload,

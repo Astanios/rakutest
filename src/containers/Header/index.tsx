@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
 
-import { movieSelectedSelector } from "../../store/movie/selectors";
 import { MenuLink, MenuTitle, Nav, NavCenter, NavHeader, NavLeft, NavRight } from './style';
 import { IState } from '../../store/models'
 import { IHeaderProps } from './models';
@@ -38,7 +37,7 @@ const Header = ({ movie }: IHeaderProps): React.ReactElement =>
   </Nav >
 
 const mapStateToProps = (state: IState): any => ({
-  movie: movieSelectedSelector(state)
+  movie: state.movie.movieSelected
 });
 
 export default connect(

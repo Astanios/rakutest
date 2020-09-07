@@ -51,6 +51,7 @@
     "enzyme-adapter-react-16": "^1.15.3",
     "enzyme-to-json": "^3.5.0",
     "jest-fetch-mock": "^3.0.3",
+    "redux-mock-store": "1.5.3",
     "ts-jest": "^26.3.0"
   }
 }

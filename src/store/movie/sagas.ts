@@ -37,7 +37,7 @@ export function* getMovieById({ payload }: any) {
   }
 }
 
-export function* searchMovie({ payload }: any) {
+export function* searchMovies({ payload }: any) {
   try {
     const query = payload;
     const response = yield call(WebService.searchMovie, query);

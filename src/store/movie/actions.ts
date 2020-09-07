@@ -3,17 +3,17 @@ import * as ActionTypes from "../actionTypes";
 import { Movie, MovieThumb } from '../../common/models/movie';
 
 export const startSearchMovie = (payload: string) => ({
-  type: ActionTypes.START_SEARCH_MOVIE,
+  type: ActionTypes.START_SEARCH_MOVIES,
   payload
 });
 
 export const successSearchMovie = (payload: MovieThumb[]) => ({
-  type: ActionTypes.SUCCESS_SEARCH_MOVIE,
+  type: ActionTypes.SUCCESS_SEARCH_MOVIES,
   payload
 });
 
 export const failSearchMovie = (payload: Error) => ({
-  type: ActionTypes.FAIL_SEARCH_MOVIE,
+  type: ActionTypes.FAIL_SEARCH_MOVIES,
   payload
 });
 

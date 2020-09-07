@@ -3,7 +3,6 @@ import ListSuggestions from '../../components/ListSuggestions';
 
 import { connect } from "react-redux";
 import { startGetMovies } from "../../store/movie/actions";
-import { moviesSelector } from "../../store/movie/selectors";
 import { IState } from '../../store/models';
 
 export const Home = ({ startGetMovies, movies }: any): React.ReactElement => {
@@ -15,7 +14,7 @@ export const Home = ({ startGetMovies, movies }: any): React.ReactElement => {
 }
 
 const mapStateToProps = (state: IState) => ({
-  movies: moviesSelector(state)
+  movies: state.movie.movieList
 });
 
 const mapDispatchToProps = {

@@ -8,7 +8,6 @@ import {
   SearchBoxLink
 } from './style';
 import { startSearchMovie } from '../../store/movie/actions';
-import { searchMoviesSelector } from '../../store/movie/selectors';
 import { ISearchBoxProps } from './models';
 
 const SEARCH_ITEMS_LIMIT = 5;
@@ -56,7 +55,7 @@ const SearchInput = ({ startSearchMovie, searchMoviesHistory }: ISearchBoxProps)
 };
 
 const mapStateToProps = (state: any) => ({
-  searchMoviesHistory: searchMoviesSelector(state)
+  searchMoviesHistory: state.movie.searchMoviesHistory
 });
 
 const mapDispatchToProps = {

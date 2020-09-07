@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { connect } from "react-redux";
 
 import MovieSummary from '../../components/MovieSummary';
-import { movieSelectedSelector } from "../../store/movie/selectors";
 import { startGetMovieById } from "../../store/movie/actions";
 import { IState } from '../../store/models'
 import IDetailsProps from './models';
@@ -27,7 +26,7 @@ export const Details = ({
 }
 
 const mapStateToProps = (state: IState) => ({
-  movie: movieSelectedSelector(state)
+  movie: state.movie.movieSelected
 });
 
 const mapDispatchToProps = {

@@ -2,9 +2,7 @@ import configureStore from "redux-mock-store";
 import saga from "redux-saga";
 import {
   startGetMovies,
-  successGetMovies,
-  failGetMovieById,
-  failGetMovies
+  successGetMovies
 } from "./actions";
 
 const middlewares = [saga];

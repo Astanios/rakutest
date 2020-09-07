@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { StyledSpinner } from './style';
-import { isLoadingSelector } from '../../store/movie/selectors';
 import { ISpinnerProps } from './models';
 import { IState } from '../../store/models';
 
@@ -20,7 +19,7 @@ const Spinner = ({ isLoading }: ISpinnerProps): React.ReactElement | null => isL
   null;
 
 const mapStateToProps = (state: IState) => ({
-  isLoading: isLoadingSelector(state)
+  isLoading: state.movie.isLoading
 });
 
 const mapDispatchToProps = {};
