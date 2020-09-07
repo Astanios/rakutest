@@ -3,7 +3,7 @@ import { REACT_APP_MOVIE_DB_KEY, discoverList } from '../common/constants';
 
 class WebService {
   private client: AxiosInstance;
-  private params: any;
+  private params: Record<string, string>;
 
   constructor() {
     this.client = axios.create({
@@ -20,10 +20,10 @@ class WebService {
     );
   }
 
-  searchMovie = (query: any) => {
+  searchMovie = (query: string) => {
     return this.client.get('/search/movie', { params: { ...this.params, query } });
   }
-  getMovieById = (query: any) => {
+  getMovieById = (query: string) => {
     return this.client.get('/movie/' + query, { params: this.params });
   }
 }

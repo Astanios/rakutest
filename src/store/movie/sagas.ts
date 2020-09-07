@@ -1,4 +1,5 @@
 import { call, put } from "redux-saga/effects";
+
 import {
   successGetMovieById,
   successGetMovies,
@@ -7,8 +8,10 @@ import {
   failGetMovies,
   failSearchMovie
 } from "./actions";
+
 import WebService from "../../utils/api";
 import { discoverTitle } from '../../common/constants';
+
 export function* getMovies() {
   try {
     let response = yield call(WebService.getMovies);

@@ -17,9 +17,8 @@ export const failSearchMovie = (payload: Error) => ({
   payload
 });
 
-export const startGetMovies = (payload: undefined) => ({
-  type: ActionTypes.START_GET_MOVIES,
-  payload
+export const startGetMovies = () => ({
+  type: ActionTypes.START_GET_MOVIES
 });
 
 export const successGetMovies = (payload: AxiosResponse) => ({

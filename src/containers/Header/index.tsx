@@ -36,7 +36,7 @@ const Header = ({ movie }: IHeaderProps): React.ReactElement =>
     </NavHeader>
   </Nav >
 
-const mapStateToProps = (state: IState): any => ({
+const mapStateToProps = (state: IState) => ({
   movie: state.movie.movieSelected
 });
 

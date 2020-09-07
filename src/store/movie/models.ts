@@ -8,7 +8,10 @@ export interface MoviesActions {
 export interface MovieInitialState {
   isLoading: boolean;
   error: Error;
-  movieList: MovieThumb[];
+  movieList: {
+    title: string,
+    list: MovieThumb[]
+  }[];
   searchMoviesHistory: any[];
   movieSelected: Movie;
 }

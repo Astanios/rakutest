@@ -1,6 +1,9 @@
 import { MovieThumb } from '../../common/models/movie';
 
 export interface IHomeProps {
-  movies: MovieThumb[],
+  movies: {
+    title: string;
+    list: MovieThumb[];
+  }[];
   startGetMovies: () => void;
 }

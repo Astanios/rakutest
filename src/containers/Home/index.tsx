@@ -4,13 +4,14 @@ import ListSuggestions from '../../components/ListSuggestions';
 import { connect } from "react-redux";
 import { startGetMovies } from "../../store/movie/actions";
 import { IState } from '../../store/models';
+import { IHomeProps } from './models';
 
-export const Home = ({ startGetMovies, movies }: any): React.ReactElement => {
+export const Home = ({ startGetMovies, movies }: IHomeProps): React.ReactElement => {
   useEffect(() => {
     startGetMovies();
   }, [startGetMovies]);
-  return <ListSuggestions moviesLists={movies} />
 
+  return <ListSuggestions moviesLists={movies} />
 }
 
 const mapStateToProps = (state: IState) => ({
